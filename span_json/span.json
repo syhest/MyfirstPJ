@@ -14,64 +14,64 @@
             ]
           }
         },
-       "mirror_port_enable" : {
-          "description" : "port enable",
-          "type_info" : {
-              "default_value" : false,
-              "type" : "SWITCH_TYPE_BOOL"
+        "mirror_port_enable": {
+          "description": "port enable",
+          "type_info": {
+            "default_value": false,
+            "type": "SWITCH_TYPE_BOOL"
           }
         },
-        "mirror_port_ingress" : {
+        "mirror_port_ingress": {
+          "description": "port ingress",
+          "type_info": {
+            "default_value": false,
+            "type": "SWITCH_TYPE_BOOL"
+          }
+        },
+        "mirror_dest_tunnel_l2": {
+          "description": "dest tunnel l2",
+          "type_info": {
+            "default_value": false,
+            "type": "SWITCH_TYPE_BOOL"
+          }
+        },
+        "mirror_dest_tunnel_ip_gre": {
+          "description": "tunnel ip gre",
+          "type_info": {
+            "default_value": false,
+            "type": "SWITCH_TYPE_BOOL"
+          }
+        },
+        "vlan_handle": {
+          "description": "Vlan handle",
+          "type_info": {
+            "type": "SWITCH_TYPE_OBJECT_ID",
+            "allowed_object_types": [
+              "vlan"
+            ]
+          }
+        },
+        "tpid": {
+          "description": "TPID field",
+          "type_info": {
+            "default_value": 0,
+            "type": "SWITCH_TYPE_UINT16"
+          }
+        },
+        "vlan_id": {
+          "description": "Vlan ID",
+          "type_info": {
+            "type": "SWITCH_TYPE_UINT16"
+          }
+        },
+        "ingress_port_handle": {
           "description": "Ingress port handle",
           "is_mandatory": true,
-          "type_info" : {
-            "type" : "SWITCH_TYPE_OBJECT_ID",
-            "allowed_object_types" : [
+          "type_info": {
+            "type": "SWITCH_TYPE_OBJECT_ID",
+            "allowed_object_types": [
               "port"
             ]
-           }
-        },
-        "mirror_dest_tunnel_l2" : {
-          "description" : "dest tunnel l2",
-          "type_info" : {
-              "default_value" : false,
-              "type" : "SWITCH_TYPE_BOOL"
-          }
-        },
-        "mirror_dest_tunnel_ip_gre" : {
-          "description" : "tunnel ip gre",
-          "type_info" : {
-              "default_value" : false,
-              "type" : "SWITCH_TYPE_BOOL"
-          }
-        },
-		    "vlan_handle" : {
-          "description": "Vlan handle",
-          "type_info" : {
-  			    "type" : "SWITCH_TYPE_OBJECT_ID",
-  			    "allowed_object_types" : [
-  			      "vlan"
-  			     ]
-          }
-        },
-        "tpid" : {
-          "description": "TPID field",
-          "type_info" : {
-            "default_value": 0,
-            "type" : "SWITCH_TYPE_UINT16"
-          }
-        },
-        "vlan_id" : {
-          "description": "Vlan ID",
-          "type_info" : {
-              "type" : "SWITCH_TYPE_UINT16"
-          }
-        },
-        "source_port": {
-          "description": "mirror source port",
-          "type_info": {
-            "default_value": "NONE",
-            "type": "SWITCH_TYPE_UINT32"
           }
         },
         "mirror_dest_id": {
@@ -81,21 +81,14 @@
             "type": "SWITCH_TYPE_UINT32"
           }
         },
-        "egress_port_handle" : {
-		      "description": "Egress port handle",
+        "egress_port_handle": {
+          "description": "Egress port handle",
           "is_mandatory": true,
-          "type_info" : {
-            "type" : "SWITCH_TYPE_OBJECT_ID",
-            "allowed_object_types" : [
-            "port"
-            ]
-           }
-         },
-        "IP version": {
-          "description": "IP header version.",
           "type_info": {
-            "default_value": "NONE",
-            "type": "SWITCH_TYPE_UINT8"
+            "type": "SWITCH_TYPE_OBJECT_ID",
+            "allowed_object_types": [
+              "port"
+            ]
           }
         },
         "tos": {
@@ -169,7 +162,12 @@
           }
         }
       },
-      "key_groups": [["device_id","mirror_dest_id"]]
+      "key_groups": [
+        [
+          "device_id",
+          "mirror_dest_id"
+        ]
+      ]
     }
-  }   
+  }
 ]
