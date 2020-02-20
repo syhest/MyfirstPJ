@@ -1,0 +1,175 @@
+[
+  {
+    "mirror": {
+      "class": "user",
+      "description": "Create a mirror session",
+      "attributes": {
+        "device_id": {
+          "description": "Device handle",
+          "is_mandatory": true,
+          "type_info": {
+            "type": "SWITCH_TYPE_OBJECT_ID",
+            "allowed_object_types": [
+              "device_id"
+            ]
+          }
+        },
+       "mirror_port_enable" : {
+          "description" : "port enable",
+          "type_info" : {
+              "default_value" : false,
+              "type" : "SWITCH_TYPE_BOOL"
+          }
+        },
+        "mirror_port_ingress" : {
+          "description": "Ingress port handle",
+          "is_mandatory": true,
+          "type_info" : {
+            "type" : "SWITCH_TYPE_OBJECT_ID",
+            "allowed_object_types" : [
+              "port"
+            ]
+           }
+        },
+        "mirror_dest_tunnel_l2" : {
+          "description" : "dest tunnel l2",
+          "type_info" : {
+              "default_value" : false,
+              "type" : "SWITCH_TYPE_BOOL"
+          }
+        },
+        "mirror_dest_tunnel_ip_gre" : {
+          "description" : "tunnel ip gre",
+          "type_info" : {
+              "default_value" : false,
+              "type" : "SWITCH_TYPE_BOOL"
+          }
+        },
+		    "vlan_handle" : {
+          "description": "Vlan handle",
+          "type_info" : {
+  			    "type" : "SWITCH_TYPE_OBJECT_ID",
+  			    "allowed_object_types" : [
+  			      "vlan"
+  			     ]
+          }
+        },
+        "tpid" : {
+          "description": "TPID field",
+          "type_info" : {
+            "default_value": 0,
+            "type" : "SWITCH_TYPE_UINT16"
+          }
+        },
+        "vlan_id" : {
+          "description": "Vlan ID",
+          "type_info" : {
+              "type" : "SWITCH_TYPE_UINT16"
+          }
+        },
+        "source_port": {
+          "description": "mirror source port",
+          "type_info": {
+            "default_value": "NONE",
+            "type": "SWITCH_TYPE_UINT32"
+          }
+        },
+        "mirror_dest_id": {
+          "description": "Unique mirror destination and encapsulation identifier",
+          "type_info": {
+            "default_value": "NONE",
+            "type": "SWITCH_TYPE_UINT32"
+          }
+        },
+        "egress_port_handle" : {
+		      "description": "Egress port handle",
+          "is_mandatory": true,
+          "type_info" : {
+            "type" : "SWITCH_TYPE_OBJECT_ID",
+            "allowed_object_types" : [
+            "port"
+            ]
+           }
+         },
+        "IP version": {
+          "description": "IP header version.",
+          "type_info": {
+            "default_value": "NONE",
+            "type": "SWITCH_TYPE_UINT8"
+          }
+        },
+        "tos": {
+          "description": "Traffic Class/Tos byte.",
+          "type_info": {
+            "default_value": "NONE",
+            "type": "SWITCH_TYPE_UINT8"
+          }
+        },
+        "ttl": {
+          "description": "Hop limit.",
+          "type_info": {
+            "default_value": "NONE",
+            "type": "SWITCH_TYPE_UINT8"
+          }
+        },
+        "src_addr": {
+          "description": "Tunnel source ip address (IPv4&IPv6).",
+          "type_info": {
+            "default_value": "NONE",
+            "type": "SWITCH_TYPE_IP_ADDRESS"
+          }
+        },
+        "dst_addr": {
+          "description": "Tunnel destination ip address (IPv4&IPv6).",
+          "type_info": {
+            "default_value": "NONE",
+            "type": "SWITCH_TYPE_IP_ADDRESS"
+          }
+        },
+        "flow_label": {
+          "description": "IPv6 header flow label field.",
+          "type_info": {
+            "default_value": "NONE",
+            "type": "SWITCH_TYPE_UINT32"
+          }
+        },
+        "src_mac": {
+          "description": "L2 source mac address.",
+          "type_info": {
+            "default_value": "NONE",
+            "type": "SWITCH_TYPE_MAC"
+          }
+        },
+        "dst_mac": {
+          "description": "L2 destination mac address.",
+          "type_info": {
+            "default_value": "NONE",
+            "type": "SWITCH_TYPE_MAC"
+          }
+        },
+        "span_id": {
+          "description": "SPAN-ID. Valid only if BCM_MIRROR_DEST_TUNNEL_WITH_SPAN_ID is set ",
+          "type_info": {
+            "default_value": "NONE",
+            "type": "SWITCH_TYPE_UINT16"
+          }
+        },
+        "sample_rate_dividend": {
+          "description": "The probability of mirroring a packet is: sample_rate_dividend >= sample_rate_divisor ? 1 : sample_rate_dividend / sample_rate_divisor ",
+          "type_info": {
+            "default_value": "NONE",
+            "type": "SWITCH_TYPE_UINT32"
+          }
+        },
+        "sample_rate_divisor": {
+          "description": "",
+          "type_info": {
+            "default_value": "NONE",
+            "type": "SWITCH_TYPE_UINT32"
+          }
+        }
+      },
+      "key_groups": [["device_id","mirror_dest_id"]]
+    }
+  }   
+]
